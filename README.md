@@ -5,13 +5,13 @@
 Bij deze opdracht moet ik een smoothboard applicatie maken, dit word een website waarin de eigenaar van smoothboard alles kan bijhouden voor zijn bedrijf, dit zijn de volgende benodigheden die de eigenaar wilt bijhouden.
 
 **Klant gegevens**
-> Id - [Int]
-> Voornaam - [String]
-> Achternaam - [String]
-> Adres - [String]
-> Telefoonnummer - [String]
-> E-mailadres - [String]
-> EigenSurfboardDesign - [Boolean]
+> - Id - [Int]
+> - Voornaam - [String]
+> - Achternaam - [String]
+> - Adres - [String]
+> - Telefoonnummer - [String]
+> - E-mailadres - [String]
+> - EigenSurfboardDesign - [Boolean]
 
  
 
