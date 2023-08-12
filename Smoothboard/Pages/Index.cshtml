@@ -1,29 +1,27 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
     ViewData["ImageSrc"] = "https://images.unsplash.com/photo-1621433213916-fde39d28e016?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welkom bij Smoothboard management</h1>
-    <img 
-        src="@ViewData["ImageSrc"]" 
-        style=
-        "
-            width: 50%; 
-            padding-top: 30px;
-        "
-    />
-    <div style="
+<div>
+    <h1 class="display-4 text-center">Welkom bij Smoothboard management</h1>
+    <div class="d-flex gap-5">
+        <div style="
             padding-top: 30px;
         ">
-        <p>In de weelderige wereld van golven en zoutwateravonturen is er één naam die boven de rest uittorent: SmoothBoard, een meesterwerk gecreëerd door de gepassioneerde geest van Sean Jensen. Als een kunstenaar op het canvas van de oceaan, heeft Sean zich gewijd aan het transformeren van surfboards in op maat gemaakte meesterwerken, doordrenkt van innovatie en creativiteit.</p>
-        <p>SmoothBoard is meer dan alleen een bedrijf; het is een belichaming van passie en ambachtelijk vakmanschap. Met een unieke specialisatie in het customizen van surfboards, heeft Sean Jensen een revolutie teweeggebracht in de surfindustrie. Elk surfboard dat zijn werkplaats verlaat, draagt niet alleen de stempel van kwaliteit en precisie, maar ook een verhaal dat is geweven uit de diepte van de zee.</p>
-        <p>Maar Sean's creatieve genie kent geen grenzen. Hij gaat verder dan alleen het customizen van surfboards; hij creëert ook zijn eigen adembenemende designs, die hij vervolgens naadloos integreert in de rijke stof van de surfplanken. Deze designs zijn een eerbetoon aan de symbiose tussen mens en natuur, een visuele vertaling van de dansende golven en de vrijheid van de oceaan.</p>
-        <p>In een tijdperk van voortdurende vooruitgang heeft SmoothBoard zich aangepast aan de moderne technologieën. Geautomatiseerde processen verzekeren dat elk board voldoet aan de hoogste normen van precisie en prestaties, zonder concessies te doen aan de kunstzinnige flair die Sean's werk definieert. Zelfs in de wereld van bits en bytes blijft de ziel van handgemaakt vakmanschap levendig en bruisend.</p>
-        <p>Maar de ware magie van SmoothBoard ligt niet alleen in de creaties van Sean, maar ook in de mogelijkheid om klanten de kans te geven hun eigen creatieve visie tot leven te brengen. Met het vermogen om digitale designs aan te leveren, stelt SmoothBoard klanten in staat om mede-auteurs te worden van hun eigen surfavontuur. Het resultaat is een fusie van artistieke expressie en functionaliteit, waar elk board een uniek verhaal vertelt.</p>
-        <p> SmoothBoard is niet zomaar een bedrijf dat surfboards produceert; het is een eerbetoon aan de ziel van het surfen zelf. Sean Jensen's visie heeft de oceaan verweven met kunst, technologie en persoonlijke betrokkenheid, waardoor een erfenis van innovatie en schoonheid wordt gecreëerd die nog vele golven zal trotseren. Of je nu een liefhebber bent van de zee, een kunstliefhebber of gewoon op zoek bent naar een unieke surfervaring, SmoothBoard blijft de ultieme bestemming voor degenen die de grenzen van avontuur en verbeelding willen verkennen.</p>
+            <p>In de weelderige wereld van golven en zoutwateravonturen is er één naam die boven de rest uittorent: SmoothBoard, een meesterwerk gecreëerd door de gepassioneerde geest van Sean Jensen. Als een kunstenaar op het canvas van de oceaan, heeft Sean zich gewijd aan het transformeren van surfboards in op maat gemaakte meesterwerken, doordrenkt van innovatie en creativiteit.</p>
+            <p>SmoothBoard is meer dan alleen een bedrijf; het is een belichaming van passie en ambachtelijk vakmanschap. Met een unieke specialisatie in het customizen van surfboards, heeft Sean Jensen een revolutie teweeggebracht in de surfindustrie. Elk surfboard dat zijn werkplaats verlaat, draagt niet alleen de stempel van kwaliteit en precisie, maar ook een verhaal dat is geweven uit de diepte van de zee.</p>
+            <p>SmoothBoard is niet zomaar een bedrijf dat surfboards produceert; het is een eerbetoon aan de ziel van het surfen zelf. Sean Jensen's visie heeft de oceaan verweven met kunst, technologie en persoonlijke betrokkenheid, waardoor een erfenis van innovatie en schoonheid wordt gecreëerd die nog vele golven zal trotseren. Of je nu een liefhebber bent van de zee, een kunstliefhebber of gewoon op zoek bent naar een unieke surfervaring, SmoothBoard blijft de ultieme bestemming voor degenen die de grenzen van avontuur en verbeelding willen verkennen.</p>
+        </div>
+        <img src="@ViewData["ImageSrc"]"
+             style="
+            width: 50%;
+            padding-top: 30px;
+            background-size: contain;
+            height: fit-content;
+        " />
     </div>
     
  </div>

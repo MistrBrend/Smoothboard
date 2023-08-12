@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Smoothboard.Models;
 
 namespace Smoothboard.Data
 {
@@ -9,5 +10,6 @@ namespace Smoothboard.Data
             : base(options)
         {
         }
+        public DbSet<Smoothboard.Models.Klant>? Klant { get; set; }
     }
 }
