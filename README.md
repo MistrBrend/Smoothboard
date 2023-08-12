@@ -30,7 +30,7 @@ Bij deze opdracht moet ik een smoothboard applicatie maken, dit word een website
 
 # User stories --
 
-## Must have
+<p style="color: BC2C1A; font-weight: bold; font-size: 18px;">Must have</p>
 - Als sean wil ik klantgegevens kunnen bijhouden ( overzicht van alle klanten )
 - Als Sean wil ik klantgegevens kunnen invoeren. ( toevoegen aan klantenlijst )
 - Als sean wil ik de maten ( breedte en hoogte ) van de surfboard weten per klant
@@ -40,10 +40,10 @@ Bij deze opdracht moet ik een smoothboard applicatie maken, dit word een website
 - Als sean wil ik de tijd en datum willen weten dat de surfboard wordt gebracht en opgehaald
 - Als sean wil ik dat de klantengegevens veilig staan ( privacy )
   
-## Should have
+<p style="color: BC2C1A; font-weight: bold; font-size: 18px;">Should have</p>
 - Als sean wil ik alle opdrachten kunnen inzien
 
-## Could have
+<p style="color: BC2C1A; font-weight: bold; font-size: 18px;">Could have</p>
 - Als sean wil ik notificaties ontvangen wanneer een opdracht is afgerond en klaar is om opgehaald te worden.
 - Als sean wil ik de mogelijkheid hebben om opdrachten te markeren als "spoed"
 - Als klant wil ik de status van mijn opdracht kunnen controleren
