@@ -23,9 +23,6 @@ Bij deze opdracht moet ik een smoothboard applicatie maken, dit word een website
 > - Akkoord van de klant over de surfboard ontwerp (boolean: yes/no)
 > - Bij de ontwerp de datum en tijd bij te zetten. 
 
- 
-
-## Verder nog moet de website veiligheid hebben zodat niet iedereen zomaar bij de klantengegevens kan komen. Tenslotte moet ik hier een link bij zetten voor mijn github-repo. daarnaast user-stories, definitions of done en verslagen schrijven. 
 
 
 # User stories --
