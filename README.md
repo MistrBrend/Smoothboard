@@ -28,8 +28,10 @@ Bij deze opdracht moet ik een smoothboard applicatie maken, dit word een website
 # User stories --
 
 **Must have**
-> - Als sean wil ik klantgegevens kunnen bijhouden ( overzicht van alle klanten )
-> - Als Sean wil ik klantgegevens kunnen invoeren. ( toevoegen aan klantenlijst )
+> - Als Sean wil ik klantgegevens kunnen invoeren. ( create )
+> - Als sean wil ik klantgegevens kunnen bijhouden ( read )
+> - Als Sean wil ik klantgegevens kunnen veranderen. ( update )
+> - Als Sean wil ik klantgegevens kunnen verwijderen. ( delete )
 > - Als sean wil ik de maten ( breedte en hoogte ) van de surfboard weten per klant
 > - Als sean wil ik een een voorbeeld van de surfboard design sturen naar mijn klant ( concept design )
 > - Als sean wil ik een akkoord voor de surfboard design voorbeeld
