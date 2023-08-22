@@ -11,5 +11,14 @@ namespace Smoothboard.Data
         {
         }
         public DbSet<Smoothboard.Models.Klant>? Klant { get; set; }
+        public DbSet<Smoothboard.Models.Opdracht>? Opdracht { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Opdracht>()
+                .HasOne(o => o.Klant)
+                .WithMany(k => k.Opdrachten)
+                .HasForeignKey(o => o.KlantId);
+        }
     }
 }

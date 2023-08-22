@@ -9,6 +9,7 @@
         public string Telefoonnummer { get; set; }
         public string Emailadres { get; set; }
         public Boolean EigenSurfboardDesign { get; set; }
+        public ICollection<Opdracht> Opdrachten { get; set; } = new List<Opdracht>();
 
         public Klant()
         {

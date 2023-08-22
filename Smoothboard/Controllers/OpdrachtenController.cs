@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,88 +10,90 @@ using Smoothboard.Models;
 
 namespace Smoothboard.Controllers
 {
-    [Authorize]
-    public class KlantenController : Controller
+    public class OpdrachtenController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public KlantenController(ApplicationDbContext context)
+        public OpdrachtenController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Klanten
+        // GET: Opdrachten
         public async Task<IActionResult> Index()
         {
-              return _context.Klant != null ? 
-                          View(await _context.Klant.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Klant'  is null.");
+            var applicationDbContext = _context.Opdracht.Include(o => o.Klant);
+            return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Klanten/Details/5
+        // GET: Opdrachten/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Klant == null)
+            if (id == null || _context.Opdracht == null)
             {
                 return NotFound();
             }
 
-            var klant = await _context.Klant
+            var opdracht = await _context.Opdracht
+                .Include(o => o.Klant)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (klant == null)
+            if (opdracht == null)
             {
                 return NotFound();
             }
 
-            return View(klant);
+            return View(opdracht);
         }
 
-        // GET: Klanten/Create
+        // GET: Opdrachten/Create
         public IActionResult Create()
         {
+            ViewData["KlantId"] = new SelectList(_context.Klant, "Id", "Id");
             return View();
         }
 
-        // POST: Klanten/Create
+        // POST: Opdrachten/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Voornaam,Achternaam,Adres,Telefoonnummer,Emailadres,EigenSurfboardDesign")] Klant klant)
+        public async Task<IActionResult> Create([Bind("Id,KlantId,DatumGebracht,DatumOpgehaald,AkkoordDesign,SurfboardDesign,Status,Hoogte,Lengte")] Opdracht opdracht)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(klant);
+                _context.Add(opdracht);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(klant);
+            ViewData["KlantId"] = new SelectList(_context.Klant, "Id", "Id", opdracht.KlantId);
+            return View(opdracht);
         }
 
-        // GET: Klanten/Edit/5
+        // GET: Opdrachten/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Klant == null)
+            if (id == null || _context.Opdracht == null)
             {
                 return NotFound();
             }
 
-            var klant = await _context.Klant.FindAsync(id);
-            if (klant == null)
+            var opdracht = await _context.Opdracht.FindAsync(id);
+            if (opdracht == null)
             {
                 return NotFound();
             }
-            return View(klant);
+            ViewData["KlantId"] = new SelectList(_context.Klant, "Id", "Id", opdracht.KlantId);
+            return View(opdracht);
         }
 
-        // POST: Klanten/Edit/5
+        // POST: Opdrachten/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Voornaam,Achternaam,Adres,Telefoonnummer,Emailadres,EigenSurfboardDesign")] Klant klant)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,KlantId,DatumGebracht,DatumOpgehaald,AkkoordDesign,SurfboardDesign,Status,Hoogte,Lengte")] Opdracht opdracht)
         {
-            if (id != klant.Id)
+            if (id != opdracht.Id)
             {
                 return NotFound();
             }
@@ -102,12 +102,12 @@ namespace Smoothboard.Controllers
             {
                 try
                 {
-                    _context.Update(klant);
+                    _context.Update(opdracht);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!KlantExists(klant.Id))
+                    if (!OpdrachtExists(opdracht.Id))
                     {
                         return NotFound();
                     }
@@ -118,49 +118,51 @@ namespace Smoothboard.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(klant);
+            ViewData["KlantId"] = new SelectList(_context.Klant, "Id", "Id", opdracht.KlantId);
+            return View(opdracht);
         }
 
-        // GET: Klanten/Delete/5
+        // GET: Opdrachten/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Klant == null)
+            if (id == null || _context.Opdracht == null)
             {
                 return NotFound();
             }
 
-            var klant = await _context.Klant
+            var opdracht = await _context.Opdracht
+                .Include(o => o.Klant)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (klant == null)
+            if (opdracht == null)
             {
                 return NotFound();
             }
 
-            return View(klant);
+            return View(opdracht);
         }
 
-        // POST: Klanten/Delete/5
+        // POST: Opdrachten/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Klant == null)
+            if (_context.Opdracht == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Klant'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Opdracht'  is null.");
             }
-            var klant = await _context.Klant.FindAsync(id);
-            if (klant != null)
+            var opdracht = await _context.Opdracht.FindAsync(id);
+            if (opdracht != null)
             {
-                _context.Klant.Remove(klant);
+                _context.Opdracht.Remove(opdracht);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool KlantExists(int id)
+        private bool OpdrachtExists(int id)
         {
-          return (_context.Klant?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Opdracht?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
