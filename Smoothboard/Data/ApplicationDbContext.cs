@@ -15,6 +15,9 @@ namespace Smoothboard.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            // Configure one-to-many relationship between Klant and Opdracht
             modelBuilder.Entity<Opdracht>()
                 .HasOne(o => o.Klant)
                 .WithMany(k => k.Opdrachten)

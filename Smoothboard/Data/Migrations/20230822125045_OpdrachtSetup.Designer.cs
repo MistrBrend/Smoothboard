@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Smoothboard.Data;
 
@@ -11,9 +12,10 @@ using Smoothboard.Data;
 namespace Smoothboard.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230822125045_OpdrachtSetup")]
+    partial class OpdrachtSetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -271,14 +273,14 @@ namespace Smoothboard.Data.Migrations
                     b.Property<bool>("AkkoordDesign")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Breedte")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("DatumGebracht")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DatumOpgehaald")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Hoogte")
+                        .HasColumnType("int");
 
                     b.Property<int>("KlantId")
                         .HasColumnType("int");

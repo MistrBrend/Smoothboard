@@ -11,8 +11,8 @@ namespace Smoothboard.Models
         public bool AkkoordDesign { get; set; }
         public string SurfboardDesign { get; set; } // Link/URL naar de surfboard design.
         public string Status { get; set; }
-        public HoogteEnum Hoogte { get; set; }
-        public BreedteEnum Lengte { get; set; }
+        public LengteEnum Lengte { get; set; }
+        public BreedteEnum Breedte { get; set; }
 
         public Klant Klant { get; set; }
 
@@ -22,7 +22,7 @@ namespace Smoothboard.Models
         }
     }
 
-    public enum HoogteEnum // Enumeration voor de Hoogte. 
+    public enum LengteEnum // Enumeration voor de Hoogte. 
     {
         Lengte260 = 260,
         Lengte270 = 270,

@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Maak een Opdracht aan</h1>
 
-<h4>Opdracht</h4>
+<h4>Opdracht:</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -42,14 +42,24 @@
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Hoogte" class="control-label"></label>
-                <select asp-for="Hoogte" class="form-control"></select>
-                <span asp-validation-for="Hoogte" class="text-danger"></span>
+                <label asp-for="Lengte" class="control-label"></label>
+                <select asp-for="Lengte" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(LengteEnum)))
+                    {
+                        <option value="@value">@value</option>
+                    }
+                </select>
+                <span asp-validation-for="Lengte" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Lengte" class="control-label"></label>
-                <select asp-for="Lengte" class="form-control"></select>
-                <span asp-validation-for="Lengte" class="text-danger"></span>
+                <label asp-for="Breedte" class="control-label"></label>
+                <select asp-for="Breedte" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(BreedteEnum)))
+                    {
+                        <option value="@value">@value</option>
+                    }
+                </select>
+                <span asp-validation-for="Breedte" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
