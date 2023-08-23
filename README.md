@@ -1,13 +1,11 @@
 ![image](https://github.com/MistrBrend/Smoothboard/assets/104073696/f3b32325-9846-43f0-ad7b-8a20a86d27aa)
 
 
-
-# Description --
-
-Bij deze opdracht moet ik een smoothboard applicatie maken, dit word een website waarin de eigenaar van smoothboard alles kan bijhouden voor zijn bedrijf, dit zijn de volgende benodigheden die de eigenaar wilt bijhouden.
-
 Instructies voor Sean:
 > Om klanten en opdrachten bij te houden moet je een account hebben. Rechts boven in de website kan je klikken op register om een account aan te maken of login als je al een account hebt. Als je ingelogd bent op je account heb je pas toegang tot de klanten en opdrachten pagina's.
+
+# Description --
+Bij deze opdracht moet ik een smoothboard applicatie maken, dit word een website waarin de eigenaar van smoothboard alles kan bijhouden voor zijn bedrijf, dit zijn de volgende benodigheden die de eigenaar wilt bijhouden.
 
 **Klant gegevens**
 > - Id - [Int]
