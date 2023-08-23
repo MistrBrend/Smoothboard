@@ -1,4 +1,5 @@
-![image](https://github.com/MistrBrend/Smoothboard/assets/104073696/14b50812-f088-41d5-8c0d-31c57fcc71cd)
+![image](https://github.com/MistrBrend/Smoothboard/assets/104073696/663a7861-cd0d-4a85-a255-d7d9ef810dcf)
+
 
 # Description --
 
