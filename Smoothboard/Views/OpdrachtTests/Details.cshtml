@@ -1,53 +1,12 @@
-﻿@model Smoothboard.Models.Opdracht
+﻿@model Smoothboard.Models.OpdrachtTest
 
 @{
     ViewData["Title"] = "Details";
 }
 
 <h1 class="display-3 fw-bold">Details</h1>
-
 <div>
-    <h4 class="text-primary">Klant gegevens</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Klant.Voornaam)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model =>  model.Klant.Voornaam)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Klant.Achternaam)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model =>  model.Klant.Achternaam)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Klant.Adres)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model =>  model.Klant.Adres)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Klant.Telefoonnummer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model =>  model.Klant.Telefoonnummer)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Klant.Emailadres)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model =>  model.Klant.Emailadres)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Klant.EigenSurfboardDesign)
-        </dt>
-        <dd class="col-sm-10">
-            @(Model.Klant.EigenSurfboardDesign ? "Ja" : "Nee")
-        </dd>
-    </dl>
-    <h4 class="text-primary">Opdracht</h4>
+    <h4 class="text-primary">OpdrachtTest</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">

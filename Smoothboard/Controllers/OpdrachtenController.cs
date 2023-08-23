@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Smoothboard.Models;
 
 namespace Smoothboard.Controllers
 {
+    [Authorize]
     public class OpdrachtenController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -65,9 +67,19 @@ namespace Smoothboard.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KlantId"] = new SelectList(_context.Klant, "Id", "Id", opdracht.KlantId);
-            return View(opdracht);
+            else
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    Console.WriteLine("ModelState Error: " + error.ErrorMessage);
+                }
+
+                ViewData["KlantId"] = new SelectList(_context.Klant, "Id", "Id", opdracht.KlantId);
+                return View(opdracht);
+            }
         }
+
 
         // GET: Opdrachten/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -82,6 +94,7 @@ namespace Smoothboard.Controllers
             {
                 return NotFound();
             }
+            ModelState.Clear();
             ViewData["KlantId"] = new SelectList(_context.Klant, "Id", "Id", opdracht.KlantId);
             return View(opdracht);
         }
@@ -117,6 +130,14 @@ namespace Smoothboard.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
+            }
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    Console.WriteLine("ModelState Error: " + error.ErrorMessage);
+                }
             }
             ViewData["KlantId"] = new SelectList(_context.Klant, "Id", "Id", opdracht.KlantId);
             return View(opdracht);

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Smoothboard.Data;
 
@@ -11,9 +12,10 @@ using Smoothboard.Data;
 namespace Smoothboard.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230823115024_OpdrachtController_change")]
+    partial class OpdrachtController_change
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -299,46 +301,6 @@ namespace Smoothboard.Data.Migrations
                     b.HasIndex("KlantId");
 
                     b.ToTable("Opdracht");
-                });
-
-            modelBuilder.Entity("Smoothboard.Models.OpdrachtTest", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<bool>("AkkoordDesign")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Breedte")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("DatumGebracht")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DatumOpgehaald")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("KlantNaam")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Lengte")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SurfboardDesign")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OpdrachtTest");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

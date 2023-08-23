@@ -23,5 +23,7 @@ namespace Smoothboard.Data
                 .WithMany(k => k.Opdrachten)
                 .HasForeignKey(o => o.KlantId);
         }
+
+        public DbSet<Smoothboard.Models.OpdrachtTest>? OpdrachtTest { get; set; }
     }
 }

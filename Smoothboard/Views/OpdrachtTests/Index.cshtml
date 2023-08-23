@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Smoothboard.Models.Opdracht>
+﻿@model IEnumerable<Smoothboard.Models.OpdrachtTest>
 
 @{
-    ViewData["Title"] = "Opdrachten";
+    ViewData["Title"] = "Opdrachten TIJDELIJK";
 }
 
 <div class="d-flex w-100 justify-content-between align-items-end pb-5">
@@ -10,12 +10,15 @@
         <a asp-action="Create" class="btn btn-primary">Maak nieuwe opdracht</a>
     </p>
 </div>
+<p class="pb-5 text-primary fs-5" style="width: 35%;">
+    Deze pagina is hier alleen omdat momenteel <strong>Create</strong> en <strong>Edit</strong> niet werken van de opdrachten pagina. Voorlopig kan je hier nog wel de opdrachten in plaatsen, de nadeel is dat je zelf de klant naam moet intypen.
+</p>
 <table class="table table-striped table-bordered">
     <thead class="bg-dark text-white">
         <tr>
             <th>#</th>
             <th>
-                @Html.DisplayNameFor(model => model.Klant)
+                @Html.DisplayNameFor(model => model.KlantNaam)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DatumGebracht)
@@ -48,8 +51,7 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Klant.Voornaam)
-                @Html.DisplayFor(modelItem => item.Klant.Achternaam)
+                @Html.DisplayFor(modelItem => item.KlantNaam)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DatumGebracht)
@@ -58,7 +60,7 @@
                 @Html.DisplayFor(modelItem => item.DatumOpgehaald)
             </td>
             <td>
-                    @(item.AkkoordDesign ? "Ja" : "Nee")
+                @(item.AkkoordDesign ? "Ja" : "Nee")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SurfboardDesign)
@@ -73,9 +75,9 @@
                 @Html.DisplayFor(modelItem => item.Breedte)
             </td>
             <td>
-               <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-               <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-dark">Details</a>
-               <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-dark">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }
