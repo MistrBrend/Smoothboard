@@ -1,4 +1,5 @@
-![image](https://github.com/MistrBrend/Smoothboard/assets/104073696/f3b32325-9846-43f0-ad7b-8a20a86d27aa)
+![image](https://github.com/MistrBrend/Smoothboard/assets/104073696/c5439c19-3760-4c41-8e30-dd43bb695306)
+
 
 
 Instructies voor Sean:
